@@ -1,5 +1,8 @@
 # Spotify Bulk Playlist Downloader
 
+> **Downloaded MP3 files include metadata such as song title, artist, album, and cover art (where available).**
+> The script uses [spotDL](https://github.com/spotDL/spotify-downloader), which automatically tags downloaded files with this information.
+
 This project allows you to fetch and list all playlists for a given Spotify user using the Spotify Web API. It uses the Client Credentials flow for authentication.
 
 ## Features
@@ -69,34 +72,8 @@ You can now use command-line arguments to control the download mode directly:
 
 If you run without arguments, the script will prompt you to choose a mode interactively as before.
 
-## Additional Requirements
-
-This script requires `spotdl` and `tqdm`:
-```sh
-pip install spotdl tqdm
-```
-
-## Example Usage
-
-```sh
-python main.py
-```
-
-You will see output like:
-```
-Found 3 playlists:
-Name: My Playlist 1
-...
-Loaded 3 playlists.
-Choose download mode:
-1. Download ALL playlists
-2. Go through one at a time (choose Y/N for each)
-3. Download a certain playlist by number
-Enter 1, 2, or 3: 1
-
-Starting download of selected playlists with spotdl...
-Playlists: 100%|██████████| 3/3 [00:45<00:00, 15s/playlist]
-```
+## Downloaded Files & Metadata
+- Downloaded MP3 files include metadata such as song title, artist, album, and cover art (where available). The script uses [spotDL](https://github.com/spotDL/spotify-downloader), which automatically tags downloaded files with this information.
 
 ## Limitations & Important Notes
 - **Only public playlists are supported.** This script uses the Spotify Client Credentials flow, which does **not** provide access to private playlists or user-specific data. Only playlists that are public and visible to everyone can be fetched and downloaded.
